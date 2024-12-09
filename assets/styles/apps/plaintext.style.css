@@ -1,0 +1,67 @@
+#page_Plaintext{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border-radius:20px;
+    background:#333333;
+    overflow:hidden;
+}
+#plaintextRagButton{
+    position:absolute;
+    top:20px;
+    right:20px;
+    color:#DDDDDD;
+    font-size:15px;
+    padding:5px;
+    cursor:pointer;
+}
+#plaintextActions{
+    position:absolute;
+    left:20px;
+    right:20px;
+    top:50px;
+}
+#plaintextActionsFileName{
+    background:#222222;
+    color:#FFFFFF;
+    border:1px solid #222222;
+    padding:10px;
+    font-family:'Teachers',sans-serif;
+    font-size:15px;
+    border-radius:8px;
+    width:200px;
+}
+#plaintextActionsSave{
+    border:0;
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+    padding:10px;
+    font-family:'Teachers',sans-serif;
+    font-size:14px;
+    border-radius:8px;
+    margin-left:15px;
+    cursor:pointer;
+    background:#86B5B5;
+    color:#222222;
+}
+
+#plaintextContent{
+    position:absolute;
+    left:20px;
+    right:20px;
+    top:100px;
+    bottom:20px;
+    padding:20px;
+    outline:none;
+    font-size:14px;
+    overflow-x:auto;
+    overflow-y:auto;
+    border-radius:15px;
+    background:#444444;
+    color:#EDEDED;
+}
+#plaintextContent::-webkit-scrollbar{
+    display:none;
+}

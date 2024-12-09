@@ -1,0 +1,116 @@
+body{
+    background:transparent !important;
+}
+
+#cinema{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#333333;
+    border-radius:20px;
+}
+
+#cinemaGrid{
+    position:absolute;
+    top:0;
+    left:0;
+    width:300px;
+    bottom:0;
+    background:#222222;
+}
+#cinemaGrid::-webkit-scrollbar{
+    display:none;
+}
+#cinemaGridActions{
+    position:absolute;
+    top:0;
+    left:0;
+    width:300px;
+    height:80px;
+    text-align:center;
+}
+#cinemaGridActionsSearch{
+    background:#111111;
+    padding:8px;
+    border-radius:20px;
+    margin-bottom:10px;
+    font-size:12px;
+    font-family:'Nunito',sans-serif;
+    color:#DDDDDD;
+    border:0;
+    outline:none;
+    -webkit-appearance:none;
+    width:250px;
+    margin-top:40px;
+}
+#cinemaGridTiles{
+    position:absolute;
+    top:80px;
+    left:0;
+    width:300px;
+    bottom:0;
+    overflow-y:auto;
+    text-align:center;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+}
+.cinemaGridTile{
+    padding:5px;
+    text-align:center;
+    cursor:pointer;
+}
+.cinemaGridTileThumb{
+    width:110px;
+    height:80px;
+    object-fit:cover;
+    border-radius:8px;
+    background:#111111;
+}
+.cinemaGridTileName{
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    color:#DDDDDD;
+}
+#cinemaFocus{
+    position:absolute;
+    top:0;
+    right:0;
+    left:300px;
+    bottom:0;
+}
+#cinemaFocusBox{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:100px;
+    background:#111111;
+    text-align:center;
+}
+#cinemaFocusVideo{
+    max-height:400px;
+}
+#cinemaFocusName{
+    border-top:1px solid #434343;
+    font-family:'Nunito',sans-serif;
+    font-size:15px;
+    color:#EDEDED;
+    padding:10px;
+}
+#cinemaFocusPath{
+    font-family:'Nunito',sans-serif;
+    font-size:13px;
+    color:#CCCCCC;
+    margin-top:5px;
+}
+#cinemaFocusActions{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:50px;
+}

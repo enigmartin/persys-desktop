@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Player</title>
+    <link type="text/css" rel="stylesheet" href="src/style.min.css" />
+    <link href="src/faa/css/all.css" rel="stylesheet" type="text/css" />
+    <!-- -->
+    <link href="src/fonts/Lora/Lora-VariableFont_wght.ttf" rel="stylesheet" />
+    <link href="src/fonts/Lora/Lora-Italic-VariableFont_wght.ttf" rel="stylesheet" />
+    <!-- -->
+    <link href="src/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" rel="stylesheet" />
+    <link href="src/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf" rel="stylesheet" />
+    <!-- -->
+    <link href="src/fonts/Nunito/Nunito-VariableFont_wght.ttf" rel="stylesheet" />
+    <link href="src/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf" rel="stylesheet" />
+    <!-- -->
+    <link href="src/fonts/Quicksand/Quicksand-VariableFont_wght.ttf" rel="stylesheet" />
+    <!-- -->
+    <link href="src/fonts/Teachers/Teachers-VariableFont_wght.ttf" rel="stylesheet" />
+    <link href="src/fonts/Teachers/Teachers-Italic-VariableFont_wght.ttf" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="bar"></div>
+    <div id="notificationBox"></div>
+
+    <script src="src/interface.min.js"></script>
+    <script>
+        persys.getCookies();
+        setTimeout(()=>{
+            I.setCookies(cookies);
+            PlayerInterface.player(player.media);
+        },200);
+    </script>
+</body>
+</html>

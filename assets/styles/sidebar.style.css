@@ -1,0 +1,227 @@
+#sidebar{
+    z-index:99;
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:-400px;
+    width:400px;
+    background:#FFFFFF;
+    border-left:1px solid #EDEDED;
+    box-shadow:-5px 5px 10px #DDDDDD;
+    overflow-y:auto;
+    transition:right 0.1s ease-out;
+    -webkit-transition:right 0.1s ease-out;
+    -moz-transition:right 0.1s ease-out;
+}
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
+#sidebarTitle{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    padding:20px;
+    font-family:'Teachers',sans-serif;
+    font-weight:400;
+    font-size:18px;
+    color:#333333;
+    text-align:center;
+    background:rgba(243,243,243,0.5);
+    border-bottom:1px solid #F3F3F3;
+}
+#sidebarBox{
+    position:absolute;
+    top:75px;
+    left:0;
+    right:0;
+}
+.sidebarContentBox{
+    position:relative;
+    width:-webkit-fill-available;
+    margin-bottom:50px;
+}
+.sidebarContentTitle{
+    padding:10px;
+    font-family:'Kanit',sans-serif;
+    font-weight:500;
+    font-size:14px;
+    text-transform:uppercase;
+    color:#333333;
+    border-bottom:1px solid #EDEDED;
+    margin-bottom:10px;
+}
+.sidebarContentTable{
+    border-collapse:collapse;
+}
+
+.sidebarInputField{
+    width:300px !important;
+}
+.sidebarInputSelect{
+    width:320px !important;
+    background-image:url("https://ec00553a-8419-4a83-ac6f-3b0f8a8c1307.s3.amazonaws.com/images/icons/arrow-b.png");
+    background-position:280px 8px !important;
+    background-size:20px 20px;
+    background-repeat:no-repeat;
+}
+.sidebarInputCode{
+    width:300px !important;
+}
+.sidebarInputButton{
+    width:320px !important;
+}
+
+/* */
+.sidebarContentItemBox{
+    padding:10px;
+    border:1px solid #EDEDED;
+    background:rgba(243,243,243,0.7);
+    border-radius:10px;
+    margin-bottom:10px;
+    width:300px;
+    min-height:50px;
+}
+.sidebarContentItemBoxRead{
+    border:1px solid #F3F3F3 !important;
+    background:transparent !important;
+}
+.sidebarContentItemBoxTimestamp{
+    font-family:'Quicksand',sans-serif;
+    font-size:12px;
+    font-weight:300;
+    color:#555555;
+    margin-bottom:5px;
+}
+.sidebarContentItemBoxBlurb{
+    font-family:'Teachers',sans-serif;
+    font-size:15px;
+    font-weight:400;
+    color:#444444;
+}
+/* */
+
+/* */
+.sidebarListBox{
+    position:relative;
+    width:320px;
+    margin:0 auto;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #DDDDDD;
+}
+.sidebarListTable{
+    border-collapse:collapse;
+}
+.sidebarListTable th{
+    background:#EDEDED;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+.sidebarListTable tr{
+    border-top:1px solid #DDDDDD;
+}
+.sidebarListTable tr:first-child{
+    border-top:0;
+}
+.sidebarListTable td{
+    border-right:1px solid #DDDDDD;
+    border-left:1px solid #DDDDDD;
+}
+.sidebarListTable td:first-child{
+    border-left:0;
+}
+.sidebarListTable td:last-child{
+    border-right:0;
+}
+.sidebarListHeader{
+    padding:5px;
+    font-family:'Quicksand',sans-serif;
+    font-weight:500;
+    font-size:13px;
+    color:#555555;
+    cursor:pointer;
+    text-align:left;
+}
+.sidebarListItem{
+    padding:5px;
+    font-family:'Quicksand',sans-serif;
+    font-size:13px;
+    font-weight:300;
+    color:#444444;
+}
+.sidebarListButton{
+    background:transparent;
+    color:#444444;
+    border:0;
+    font-size:13px;
+    cursor:pointer;
+}
+.sidebarListButtonRed{
+    color:#FF5D5D !important;
+}
+/* */
+
+@media (prefers-color-scheme: dark) {
+    #sidebar{
+        background:#222222;
+        border-left:1px solid #222222;
+        box-shadow:-5px 5px 10px #111111;
+    }
+    #sidebarTitle{
+        color:#FFFFFF;
+        background:rgba(51,51,51,0.7);
+        border-bottom:1px solid #333333;
+    }
+    #sidebarBox{}
+    .sidebarContentBox{
+    }
+    .sidebarContentTitle{
+        color:#FFFFFF;
+        border-bottom:1px solid #333333;
+    }
+
+    .sidebarInputSelect{
+        background-image:url("https://ec00553a-8419-4a83-ac6f-3b0f8a8c1307.s3.amazonaws.com/images/icons/arrow-w.png");
+        background-position:280px 8px !important;
+        background-size:20px 20px;
+        background-repeat:no-repeat;
+    }
+
+    .sidebarContentItemBox{
+        border:1px solid #333333;
+        background:rgba(51,51,51,0.3);
+    }
+    .sidebarContentItemBoxRead{
+        border:1px solid #434343 !important;
+    }
+    .sidebarContentItemBoxTimestamp{
+        color:#999999;
+    }
+    .sidebarContentItemBoxBlurb{
+        color:#999999;
+    }
+
+    /* */
+    .sidebarListBox{
+        border:1px solid #434343;
+    }
+    .sidebarListTable th{
+        background:#434343;
+    }
+    .sidebarListTable tr{
+        border-top:1px solid #434343;
+    }
+    .sidebarListTable td{
+        border-right:1px solid #434343;
+        border-left:1px solid #434343;
+    }
+    .sidebarListHeader{
+        color:#FFFFFF;
+    }
+    .sidebarListItem{
+        color:#DDDDDD;
+    }
+    /* */
+}

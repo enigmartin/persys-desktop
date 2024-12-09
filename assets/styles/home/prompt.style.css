@@ -1,0 +1,34 @@
+#promptBox{
+    position:absolute;
+    bottom:0;
+    left:50px;
+    right:50px;
+    border-radius:40px;
+    background:rgba(31,31,31,0.8);
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+    border:1px solid #444444;
+    padding:10px;
+}
+#promptField{
+    background:transparent;
+    border:0;
+    -webkit-appearance:none;
+    padding:10px;
+    font-family:'Nunito',sans-serif;
+    font-size:16px;
+    color:#EDEDED;
+    width:100%;
+    outline:none;
+}
+#promptButton{
+    background:rgba(240,240,240,0.7);
+    border-radius:100%;
+    color:#555555;
+    padding:10px;
+    width:40px;
+    height:40px;
+    cursor:pointer;
+    font-size:18px;
+    border:0;
+}

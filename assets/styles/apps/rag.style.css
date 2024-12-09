@@ -1,0 +1,28 @@
+#page_Rag{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#333333;
+    border-radius:15px;
+    overflow:hidden;
+}
+#ragResponse{
+    position:absolute;
+    top:50px;
+    left:15px;
+    right:15px;
+    bottom:100px;
+    overflow-y:auto;
+}
+#ragInput{
+    background:rgba(31,31,31,0.7);
+    border:1px solid #555555;
+    border-radius:15px;
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    right:15px;
+    padding:10px;
+}
