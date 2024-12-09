@@ -1,5 +1,7 @@
 # persys-desktop
 
+![screenshot](screenshot.png)
+
 Persys desktop application. Electron based application to access your Persys server.
 
 Refer to the [main](https://github.com/persys-ai/persys) repo for contributions and other instructions.
