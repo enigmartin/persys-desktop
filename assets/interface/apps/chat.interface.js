@@ -114,8 +114,8 @@ class ChatInterface extends I {
                 let i=E.div(E.tableC(E.tableR(responseTable),''),'inputText','');
                 i.innerHTML=input;
                 i.scrollIntoView();
-                let peer=new Peer(publicToken,chatStreamConfig);
                 A.r('POST','/chat/save',{id:chatSession.id,history:chatHistory},(error,data)=>{
+                    let peer=new Peer(publicToken,chatStreamConfig);
                     if(error) I.error(error);
                     else {
                         peer.on('open', (id)=> {
@@ -175,6 +175,7 @@ class ChatInterface extends I {
                                 if(JSON.parse(message.data).done) {
                                     chatHistory.push({role:'assistant',content:assistantMessage});
                                     //let code=ChatInterface.extractMarkdownCodeBlocks(assistantMessage,r);
+                                    peer.destroy();
                                 }
                                 if(!touched) {
                                     //r.scrollIntoView();

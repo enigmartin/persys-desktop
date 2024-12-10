@@ -9,6 +9,7 @@ class LibraryInterface extends I{
         let rag=E.div(library,'','librarySidebarRagButton');
         rag.innerHTML=ragIcon;
         rag.onclick=(e)=>{
+            // saved for later, rag for selected text instead of entire page, needs to add auto copy to clipboard since its on a foreign pdf object
             /*
             async function read() {
                 let d=await navigator.clipboard.readText();
@@ -30,14 +31,18 @@ class LibraryInterface extends I{
                 rag.innerHTML=ragIcon;
                 if(!error) {
                     if(data) {
-                        let documents=data.split('. ');
+                        // used previously, chunking by period
+                        //let documents=data.split('. ');
+                        // chunking by text count
+                        let documents=data.match(/.{1,500}/g);
                         if(documents && documents.length>0) {
                             let ragArray=[];
                             for(let i=0;i<documents.length;i++) {
-                                ragArray.push(documents[i]);
+                                if(documents[i]) ragArray.push(documents[i]);
                             }
                             I.rag(rag,activeFile.name+'_page_'+ragPage.value,'',ragArray);
                         }
+                        else I.error('More context needed.');
                     }
                 }
                 else I.error(error);

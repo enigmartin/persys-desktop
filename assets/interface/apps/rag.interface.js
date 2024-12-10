@@ -10,7 +10,6 @@ class RagInterface extends I {
         let inputButton=E.button(E.tableC(inputTr,'10%'),'','inputButton','<i class="fa-solid fa-arrow-up"></i>');
 
         function send() {
-            let peer=new Peer(publicToken,ragStreamConfig);
             response.innerHTML='';
             let inputData=inputField.value;
             inputField.value='';
@@ -19,6 +18,7 @@ class RagInterface extends I {
             i.innerHTML=inputData;
             let r=E.div(E.tableC(E.tableR(responseTable),''),'responseText','');
             A.r('POST','/embeddings/rag',{name:file.name,input:inputData},(error,data)=>{
+                let peer=new Peer(publicToken,ragStreamConfig);
                 if(!error) {
                     peer.on('open', (id)=>{
                         E.img(r,'','chatLoading','loading.gif');
@@ -27,6 +27,9 @@ class RagInterface extends I {
                             if(j===0) r.innerHTML='';
                             r.innerHTML=r.innerHTML+JSON.parse(message.data).content.replace('\n','<br/>');
                             j++;
+                            if(JSON.parse(message.data).done) {
+                                peer.destroy();
+                            }
                         });
                     });
                 }
