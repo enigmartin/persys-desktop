@@ -24,7 +24,8 @@ Run it!
 If you have already setup [persys-server](https://github.com/persys-ai/persys-server),
 all you need to do is specify your address on the login page and use the password you created.
 Do not use "http" or "https" in the server address on login.
-If you're running the server on the same machine as the desktop app, simply put `localhost` in the address field.
+If you're running the server on the same machine as the desktop app, simply put the hostname of your machine.
+To find your hostname, run `hostname` or `echo $HOST`. This will ensure all `persys-server` services reach each other. 
 The different ports for the services will use that base address.
 
 ## /assets

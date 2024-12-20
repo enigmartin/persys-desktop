@@ -2,6 +2,13 @@ const { app, BrowserWindow, ipcMain,Menu,session } = require('electron');
 const path = require('node:path');
 //
 
+let titleBarVisibility='hidden';
+let transparency=true;
+if(process.platform !== 'darwin') {
+  titleBarVisibility='visible';
+  transparency=false;
+}
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if(require('electron-squirrel-startup')) app.quit();
 
@@ -19,7 +26,7 @@ const homeWindow=()=> {
     const mainWindow=new BrowserWindow({
       width: 1100,
       height: 700,
-      titleBarStyle: 'hidden',
+      titleBarStyle: titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname,'preload.js'),
@@ -41,14 +48,14 @@ const login=()=>{
     const win = new BrowserWindow({
       width: 350,
       height: 425,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload:path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent:true,
+      transparent:transparency,
       resizable:false,
       icon:path.join(__dirname, 'icon.png')
     });
@@ -83,14 +90,14 @@ ipcMain.on('open-paper', (event, arg) =>{
   const viewer = new BrowserWindow({
     width: 900,
     height: 770,
-    titleBarStyle:'hidden',
+    titleBarStyle:titleBarVisibility,
     trafficLightPosition:{x:10,y:10},
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: true
     },
-    transparent:true,
+    transparent:transparency,
     icon:path.join(__dirname, 'icon.js'),
     x:pos[0]-42,
     y:pos[1]-42,
@@ -106,14 +113,14 @@ ipcMain.on('open-player', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 320,
       height: 550,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       resizable:false,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]-42,
@@ -132,14 +139,14 @@ ipcMain.on('open-gallery', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 800,
       height: 500,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]-42,
       y:pos[1]-42,
@@ -157,14 +164,14 @@ ipcMain.on('open-cinema', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 800,
       height: 500,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]-42,
       y:pos[1]-42,
@@ -182,14 +189,14 @@ ipcMain.on('open-chat', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 900,
       height: 600,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]-42,
       y:pos[1]-42,
@@ -207,14 +214,14 @@ ipcMain.on('open-files', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 800,
       height: 500,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]-42,
       y:pos[1]-42,
@@ -231,14 +238,14 @@ ipcMain.on('open-library', (event, arg) =>{
   const viewer = new BrowserWindow({
     width: 900,
     height: 770,
-    titleBarStyle:'hidden',
+    titleBarStyle:titleBarVisibility,
     trafficLightPosition:{x:10,y:10},
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: true
     },
-    transparent:true,
+    transparent:transparency,
     icon:path.join(__dirname, 'icon.js'),
     x:pos[0]-42,
     y:pos[1]-42,
@@ -254,14 +261,14 @@ ipcMain.on('open-todo', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 800,
       height: 500,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       resizable:false,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]+142,
@@ -280,14 +287,14 @@ ipcMain.on('open-cardclip', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 800,
       height: 400,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       resizable:false,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]+142,
@@ -305,14 +312,14 @@ ipcMain.on('open-options', (event, arg) => {
   const viewer = new BrowserWindow({
     width: 500,
     height: 375,
-    titleBarStyle:'hidden',
+    titleBarStyle:titleBarVisibility,
     trafficLightPosition:{x:10,y:10},
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: true
     },
-    transparent: true,
+    transparent: transparency,
     resizable:false,
     icon:path.join(__dirname, 'icon.js'),
     x:pos[0]+142,
@@ -327,14 +334,14 @@ ipcMain.on('open-monitor', (event, arg) => {
     const viewer = new BrowserWindow({
       width: 300,
       height: 600,
-      titleBarStyle:'hidden',
+      titleBarStyle:titleBarVisibility,
       trafficLightPosition:{x:10,y:10},
       webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
         contextIsolation: true
       },
-      transparent: true,
+      transparent: transparency,
       resizable:false,
       icon:path.join(__dirname, 'icon.js'),
       x:pos[0]+250,
@@ -351,14 +358,14 @@ ipcMain.on('open-rag', (event, arg) => {
   const viewer=new BrowserWindow({
     width: 500,
     height: 500,
-    titleBarStyle:'hidden',
+    titleBarStyle:titleBarVisibility,
     trafficLightPosition:{x:10,y:10},
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
       contextIsolation: true
     },
-    transparent: true,
+    transparent: transparency,
     resizable:false,
     icon:path.join(__dirname, 'icon.js'),
     x:pos[0]+250,
@@ -372,14 +379,14 @@ ipcMain.on('open-plaintext', (event, arg) =>{
   const viewer = new BrowserWindow({
     width: 500,
     height: 650,
-    titleBarStyle:'hidden',
+    titleBarStyle:titleBarVisibility,
     trafficLightPosition:{x:10,y:10},
     webPreferences: {
       preload: path.join(__dirname,'preload.js'),
       nodeIntegration: true,
       contextIsolation: true
     },
-    transparent:true,
+    transparent:transparency,
     icon:path.join(__dirname, 'icon.js'),
     x:pos[0]-42,
     y:pos[1]-42,
