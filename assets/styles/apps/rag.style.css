@@ -1,3 +1,6 @@
+body{
+    background:transparent;
+}
 #page_Rag{
     position:absolute;
     top:0;
@@ -5,7 +8,7 @@
     right:0;
     bottom:0;
     background:#333333;
-    border-radius:15px;
+    border-radius:20px;
     overflow:hidden;
 }
 #ragResponse{

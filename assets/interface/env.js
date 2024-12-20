@@ -1,4 +1,4 @@
-const env={clientVersion:'1.0.0'};
+const env={clientVersion:'1.0.1'};
 var apiRoot;
 var publicToken;
 //

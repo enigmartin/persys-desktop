@@ -8,11 +8,24 @@ class PlayerInterface extends I {
         rag.innerHTML=ragIcon;
         rag.onclick=()=>{
             if(playlistData && playlistData.length>0) {
+                //
+                /*
+                let songs=[];
+                for(let i=0;i<playlistData.length;i++) {
+                    songs.push(playlistData[i].name);
+                }
+                const ragArray=songs.map((song,i)=>{
+                    let s=i*10;
+                    let e=Math.min(s+10,songs.length);
+                    return "This is my music, a list of songs I listen to. "+songs.slice(s,e).join('; ');
+                });
+                 */
+                //
                 let ragArray=[];
                 for(let i=0;i<playlistData.length;i++) {
-                    ragArray.push('This is a list of songs I listen to: '+playlistData[i].name);
+                    ragArray.push('This is a song I listen to: '+playlistData[i].name);
                 }
-                I.rag(rag,'App_Player','This is a list of songs I listen to.',ragArray);
+                I.rag(rag,'App_Player','',ragArray);
             }
             else I.error('Upload audio files first.');
         };

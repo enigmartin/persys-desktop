@@ -9,7 +9,7 @@ class MonitorInterface extends I {
         render.style.height='200px';
         render.style.width='125px';
         render.style.margin='0 auto';
-        new StlViewer(render,{ models:[{id:-1,filename:apiUrl+'/stl-render/?publicToken='+publicToken,color:'#FFFFFF',display:'smooth',animation:{delta:{rotationy:1, msec:2000, loop:true}}}]});
+        if(apiRoot.split('-').indexOf('persys')>-1) new StlViewer(render,{ models:[{id:-1,filename:apiUrl+'/stl-render/?publicToken='+publicToken,color:'#FFFFFF',display:'smooth',animation:{delta:{rotationy:1, msec:2000, loop:true}}}]});
         //
         let space=E.div(monitor,'homeDeviceBoxes','');
         E.div(space,'homeDeviceBoxTitles','').innerHTML='Space';

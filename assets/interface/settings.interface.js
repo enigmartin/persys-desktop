@@ -92,7 +92,7 @@ class SettingsInterface extends I {
                     E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsListItem','').innerHTML=data.deviceName;
 
                     E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsLabel','').innerHTML='WiFi SSID';
-                    E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsListItem','').innerHTML=data.wifiSSID;
+                    E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsListItem','').innerHTML=data.deviceName;
 
                     E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsLabel','').innerHTML='Firmware Version';
                     E.div(E.tableC(E.tableR(settingsTable),''),'optionsSettingsListItem','').innerHTML=data.firmwareVersion;
